@@ -5,14 +5,12 @@ import { Route, Switch, Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import { hot } from "react-hot-loader";
 
-import NotFound from "../NotFound";
 import User from "../User";
 import Users from "./Users";
-import { userStore } from "../../stores/userStore";
+import { UserStore } from "../../stores/userStore";
 
 export interface IHomeProps {
-  userStore: userStore;
-  history: any;
+  userStore: UserStore;
   match: {
     url: string;
   };
@@ -29,19 +27,18 @@ class Home extends React.Component<IHomeProps, IHomeState> {
     return (
       <div className="home">
         <header>
-          <Link to={`${match.url}users`}>Home</Link>
+          <Link to={`${match.url}`}>Home</Link>
         </header>
 
         <Route>
           <Switch>
-            <Route path="/users" component={Users} />
+            <Route path="/" component={Users} />
             <Route path="/user/:id" component={User} />
-            <Route component={NotFound} />
           </Switch>
         </Route>
 
         <footer>
-          <p>Here you can see Usersusers </p>
+          <p>Here you can see users info </p>
         </footer>
       </div>
     );

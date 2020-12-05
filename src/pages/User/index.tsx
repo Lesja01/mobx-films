@@ -5,15 +5,15 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
-import { Avatar, Rate, Button } from "antd";
+import { Avatar, Rate, Button, Divider } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
-import { userStore } from "../../stores/userStore";
+import { UserStore } from "../../stores/userStore";
 import { IPlainObject } from "../../interfaces";
 import Spinner from "../../components/Spinner/Spinner";
 
 export interface IUserProps {
-  userStore: userStore;
+  userStore: UserStore;
   location: IPlainObject;
 }
 
@@ -35,10 +35,9 @@ class User extends React.Component<IUserProps, IUserState> {
     return (
       <div className="info">
         <h1 dangerouslySetInnerHTML={{ __html: user.name }} />
+        <Divider className="divider" />
         <Avatar className="avatar" size={64} icon={<UserOutlined />} />
-        <div>
-          <Rate className="rate" defaultValue={3} allowHalf />
-        </div>
+        <Rate className="rate" defaultValue={3} allowHalf />
         <h3>Username: {user.username} </h3>
         <p>Phone: {user.phone}</p>
         <p>Email: {user.email}</p>
@@ -51,8 +50,10 @@ class User extends React.Component<IUserProps, IUserState> {
     return (
       <div className="user">
         {this.store.pageLoading ? <Spinner /> : this.renderContent()}
-        <Link type="button" to={{ pathname: `/users` }}>
-          <Button> Каталог</Button>
+        <Link type="button" to={{ pathname: `/` }}>
+          <Button type="primary" className="btn">
+            Каталог
+          </Button>
         </Link>
       </div>
     );

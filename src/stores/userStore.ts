@@ -3,12 +3,12 @@ import { action, observable } from "mobx";
 import { IPlainObject } from "../interfaces";
 import { StoreExt } from "../services/reactExt";
 
-class userStore extends StoreExt {
+class UserStore extends StoreExt {
   @observable pageLoading: boolean = false;
   @observable users: Array<any> = [];
   @observable user: IPlainObject = {};
 
-  @action getUsers = async (options: { page?: number; per_page?: number }) => {
+  @action getUsers = async () => {
     this.pageLoading = true;
 
     try {
@@ -27,6 +27,6 @@ class userStore extends StoreExt {
   };
 }
 
-const userStore = new userStore();
+const userStore = new UserStore();
 
-export { userStore as default, userStore };
+export { userStore as default, UserStore };

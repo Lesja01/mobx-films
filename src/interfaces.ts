@@ -5,7 +5,7 @@ export interface IAxiosRequestConfig extends AxiosRequestConfig {
 }
 
 export interface IHttpResquest {
-  [v: string]: any;
+  [method: string]: any;
   get?(url: string, data?: any, baseUrl?: string): Promise<any>;
   post?(url: string, data?: any, baseUrl?: string): Promise<any>;
   delete?(url: string, data?: any, baseUrl?: string): Promise<any>;

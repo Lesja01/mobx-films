@@ -28,7 +28,7 @@ a {
   min-width: 200px;
   max-width: 980px;
   margin: 0 auto;
-  padding: 30px 190px;
+  padding: 30px 190px 15px;
 }
 .info > h1 {
   margin-top: 0;
@@ -40,118 +40,54 @@ a {
 }
 .home header {
   height: 50px;
-  background: #37649b;
+  background: #8fa1c7;
 }
 .home header a {
   position: absolute;
   line-height: 50px;
   top: 0;
   right: 20px;
-  color: #fff;
+  color: white;
 }
 .home header a:hover {
-  color: #bbb;
+  color: #62626b;
 }
 .home header a:first-child {
   right: 90px;
   z-index: 9;
 }
 .home footer {
-  background: #37649b;
+  background: #8fa1c7;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 99;
 }
 .home footer > p {
   text-align: center;
-  color: #fff;
+  color: white;
 }
-.list {
+.users {
   position: relative;
   max-width: 700px;
   margin: 0 auto;
   padding: 10px 45px;
 }
-.list .item {
+.users .user {
   position: relative;
   margin-top: 10px;
   padding: 10px 20px;
-  background: rgba(225, 225, 225, 0.2);
-}
-.list .item:hover {
-  color: #111;
   background: rgba(225, 225, 225, 0.4);
 }
-.list .item > span {
-  color: #627682;
-  font-size: 12px;
-  margin-right: 4px;
+.users .user a {
+  color: #62626b;
 }
-.list .item > label {
-  color: #b0bcc4;
-  font-size: 12px;
-  margin-left: 6px;
+.users .user:hover {
+  color: #111;
+  background: rgba(225, 225, 225, 0.2);
 }
-.list .item > p {
-  margin-right: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1.25;
-  margin-bottom: 0;
-}
-.users {
-  color: #444;
-}
-.pagination {
-  margin: 20px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-.pagination > button {
-  background: #fff;
-  border: 1px solid #ededed;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 10px;
-  text-align: center;
-  cursor: pointer;
-  color: #ededed;
-}
-.pagination > button:disabled {
-  cursor: not-allowed;
-}
-.pagination > button:disabled:hover {
-  background: inherit;
-  color: #ededed;
-  border: 1px solid #ededed;
-}
-.pagination > button:hover {
-  background: #f8f8f838;
-  color: #aaa;
-  border: 1px solid #aaa;
-}
-.pagination .pre {
-  float: left;
-}
-.pagination .next {
-  float: left;
-  margin-left: 20px;
-}
-
-.notFound {
-  font-size: 30px;
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
+.users-container {
+  color: #62626b;
 }
 
 .user {
@@ -160,23 +96,12 @@ a {
   justify-content: center;
   align-items: center;
 }
-.user button {
-  border: none;
-  color: #fff;
-  background: #5d9936;
-  height: 30px;
-  border-radius: 2px;
-  cursor: pointer;
-  outline: none;
-  width: 100px;
-  margin-left: 15px;
-  margin-bottom: 50px;
-}
-.user button:hover {
-  background: rgba(93, 153, 54, 0.9);
-}
 .user h1 {
   text-align: center;
+}
+.user .btn {
+  width: 150px;
+  margin-bottom: 30px;
 }
 .user .avatar {
   display: flex;
@@ -189,6 +114,9 @@ a {
   display: flex;
   list-style-type: none;
   margin-bottom: 10px;
+}
+.user .divider {
+  margin-top: 0px;
 }
 
 /*!

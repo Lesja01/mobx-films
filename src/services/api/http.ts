@@ -20,10 +20,10 @@ const http: IHttpResquest = {};
 const methods = ["get", "post", "put", "delete"];
 const token = "f9e7e61d-0c64-40b0-91fd-40453322f152";
 
-methods.forEach((v) => {
-  http[v] = (url: string, data: any, baseUrl?: string, headers?: object) => {
+methods.forEach((method) => {
+  http[method] = (url: string, data: any, baseUrl?: string) => {
     const axiosConfig: IAxiosRequestConfig = {
-      method: v,
+      method: method,
       url,
       baseURL: baseUrl || DEFAULTCONFIG.baseURL,
       headers: {
@@ -56,7 +56,7 @@ methods.forEach((v) => {
     instance.interceptors.response.use(
       (response) => {
         let rdata = response.data;
-        if (!isSuccess(v, rdata)) {
+        if (!isSuccess(method, rdata)) {
           const _err = {
             msg: rdata.msg,
             code: rdata.code,
@@ -81,7 +81,7 @@ methods.forEach((v) => {
         return Promise.reject(_err);
       }
     );
-    if (v === "get") {
+    if (method === "get") {
       axiosConfig.params = data;
     } else if (data instanceof FormData) {
       axiosConfig.data = data;

@@ -1,9 +1,8 @@
 {
-  "name": "website",
+  "name": "react-mobx",
   "version": "1.0.0",
   "main": "./src/index.tsx",
-  "repository": "https://github.com/Duobe/website.git",
-  "author": "Duobe <beduo@qq.com>",
+  "author": "lesja",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^14.14.10",
